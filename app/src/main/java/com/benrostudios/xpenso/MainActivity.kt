@@ -1,37 +1,52 @@
 package com.benrostudios.xpenso
 
 import android.os.Bundle
+import android.view.MenuItem
+import android.view.View
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.TextView
+import androidx.fragment.app.Fragment
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() ,  BottomNavigationView.OnNavigationItemSelectedListener {
 
-    private lateinit var textMessage: TextView
-    private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
-        when (item.itemId) {
-            R.id.navigation_home -> {
-                textMessage.setText(R.string.title_home)
-                return@OnNavigationItemSelectedListener true
-            }
-            R.id.navigation_dashboard -> {
-                textMessage.setText(R.string.title_dashboard)
-                return@OnNavigationItemSelectedListener true
-            }
-            R.id.navigation_notifications -> {
-                textMessage.setText(R.string.title_notifications)
-                return@OnNavigationItemSelectedListener true
-            }
-        }
-        false
-    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val navView: BottomNavigationView = findViewById(R.id.nav_view)
+        val navigation = findViewById<View>(R.id.navigation) as BottomNavigationView
 
-        textMessage = findViewById(R.id.message)
-        navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
+        navigation.setOnNavigationItemSelectedListener(this)
+        loadFrag(home_frag())
+
+
     }
+    private fun loadFrag(fragment: Fragment?): Boolean {
+        if (fragment != null) {
+            supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.frame, fragment)
+                .commit()
+
+
+            return false
+        }
+        return true
+    }
+
+    override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
+        var fragmenthere: Fragment? = null
+        when (menuItem.itemId) {
+            R.id.navigation_home -> fragmenthere = home_frag()
+            R.id.navigation_bal -> fragmenthere = home_frag()
+            R.id.navigation_transactions -> fragmenthere = trans_frag()
+        }
+
+        loadFrag(fragmenthere)
+
+
+        return true
+    }
+
 }
