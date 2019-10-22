@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() ,  BottomNavigationView.OnNavigationIte
         var fragmenthere: Fragment? = null
         when (menuItem.itemId) {
             R.id.navigation_home -> fragmenthere = home_frag()
-            R.id.navigation_bal -> fragmenthere = home_frag()
+            R.id.navigation_bal -> fragmenthere = spend_frag()
             R.id.navigation_transactions -> fragmenthere = trans_frag()
         }
 

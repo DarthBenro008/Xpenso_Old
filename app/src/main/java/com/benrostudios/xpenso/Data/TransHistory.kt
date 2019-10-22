@@ -17,7 +17,9 @@ import androidx.room.PrimaryKey
                   @field:ColumnInfo(name = "type")
                   val type: String,
                   @field:ColumnInfo(name = "description")
-                  val descp: String)
+                  val descp: String,
+                  @field:ColumnInfo(name = "entity")
+                  val timo: String)
 
         @PrimaryKey(autoGenerate = true)
         var uid: Int = 0
