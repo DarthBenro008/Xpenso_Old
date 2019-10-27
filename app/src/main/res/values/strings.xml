@@ -1,6 +1,16 @@
 <resources>
     <string name="app_name">Xpenso</string>
-    <string name="title_home">Home</string>
-    <string name="title_spend">Spend Analyser</string>
-    <string name="title_transactions">Transactions</string>
+    <string name="home">Home</string>
+    <string name="analytics">Analytics</string>
+    <string name="transactions">Transactions</string>
+
+    <string name="authenticate_title">Xpenso</string>
+    <string name="authenticate_subtitle">To continue, we need to verify it\'s you</string>
+
+    <string name="hello_greeting">Hello there!</string>
+
+    <string name="income">Income</string>
+    <string name="expenses">Expenses</string>
+    <string name="balance">Balance</string>
+
 </resources>
