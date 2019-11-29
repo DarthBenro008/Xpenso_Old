@@ -41,7 +41,8 @@
                 android:id="@+id/amt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Amount" />
+                android:hint="Amount"
+                android:inputType="numberDecimal" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -57,7 +58,7 @@
             app:layout_constraintVertical_bias="0.062">
 
         <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/phy"
+                android:id="@+id/descp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Description" />
@@ -67,21 +68,21 @@
             android:id="@+id/addo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="392dp"
+            android:layout_marginBottom="404dp"
             android:text="Add"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.814"
+            app:layout_constraintHorizontal_bias="0.8"
             app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.chip.ChipGroup
-            android:id="@+id/choice_chip_group"
+            android:id="@+id/phyvirtu_chip_group"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toTopOf="@+id/addo"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout3"
-            app:layout_constraintVertical_bias="0.275"
+            app:layout_constraintVertical_bias="1.0"
             app:singleSelection="true">
 
         <com.google.android.material.chip.Chip
@@ -91,7 +92,8 @@
                 android:layout_height="35dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="10dp"
-                android:text="Physical" />
+                android:text="Physical"
+                />
 
         <com.google.android.material.chip.Chip
                 android:id="@+id/choice_chip2"
@@ -99,6 +101,54 @@
                 android:layout_width="wrap_content"
                 android:layout_height="35dp"
                 android:text="Virtual" />
+
+    </com.google.android.material.chip.ChipGroup>
+
+    <com.google.android.material.chip.ChipGroup
+            android:id="@+id/categ_chip_group"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/addo"
+            app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+                android:id="@+id/chip4"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                tools:text="Category1" />
+
+        <com.google.android.material.chip.Chip
+                android:id="@+id/chip5"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Category2" />
+
+        <com.google.android.material.chip.Chip
+                android:id="@+id/chip6"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Category3" />
+
+        <com.google.android.material.chip.Chip
+                android:id="@+id/chip7"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Category4" />
+
+        <com.google.android.material.chip.Chip
+                android:id="@+id/chip8"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Category5" />
     </com.google.android.material.chip.ChipGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

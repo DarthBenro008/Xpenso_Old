@@ -7,7 +7,7 @@ import androidx.room.Query
 
 @Dao
 interface TransHistoryDAO {
-
+//Queries of Room
     @get:Query("SELECT * from TransHistory ORDER BY uid DESC")
     val allHistory: List<TransHistory>
 

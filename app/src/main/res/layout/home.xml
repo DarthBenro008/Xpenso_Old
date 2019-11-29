@@ -166,7 +166,7 @@
                         android:id="@+id/textView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/income"
+                        android:text="@string/PhyCash"
                         android:textColor="@color/secondaryTextColor" />
 
                 <TextView
@@ -195,7 +195,7 @@
                         android:id="@+id/textView5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/expenses"
+                        android:text="@string/VirtuCash"
                         android:textColor="@color/secondaryTextColor" />
 
                 <TextView

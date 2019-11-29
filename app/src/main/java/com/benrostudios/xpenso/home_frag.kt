@@ -37,6 +37,8 @@ class home_frag : Fragment() {
 
         circularProgress.setProgress( balance/income*100, 100.0)
 
+
+
         return fragview
     }
 }

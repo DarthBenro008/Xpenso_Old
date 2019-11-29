@@ -25,34 +25,34 @@ class MainActivity : AppCompatActivity() ,  BottomNavigationView.OnNavigationIte
         //showBiometricPrompt()
     }
 
-//    private fun showBiometricPrompt() {
-//        val executor = Executors.newSingleThreadExecutor()
-//        val biometricPrompt = BiometricPrompt(this, executor, object : BiometricPrompt.AuthenticationCallback() {
-//
-//            override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
-//                super.onAuthenticationError(errorCode, errString)
-//                loadFrag(AuthenticationFailedFragment())
-//            }
-//
-//            override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
-//                super.onAuthenticationSucceeded(result)
-//                loadFrag(home_frag())
-//            }
-//
-//            override fun onAuthenticationFailed() {
-//                super.onAuthenticationFailed()
-//                loadFrag(AuthenticationFailedFragment())
-//            }
-//        })
-//
-//        val promptInfo = BiometricPrompt.PromptInfo.Builder()
-//            .setTitle(getString(R.string.authenticate_title))
-//            .setSubtitle(getString(R.string.authenticate_subtitle))
-//            .setNegativeButtonText("Cancel")
-//            .build()
-//        biometricPrompt.authenticate(promptInfo)
-//
-//    }
+    private fun showBiometricPrompt() {
+        val executor = Executors.newSingleThreadExecutor()
+        val biometricPrompt = BiometricPrompt(this, executor, object : BiometricPrompt.AuthenticationCallback() {
+
+            override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
+                super.onAuthenticationError(errorCode, errString)
+                loadFrag(AuthenticationFailedFragment())
+            }
+
+            override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
+                super.onAuthenticationSucceeded(result)
+                loadFrag(home_frag())
+            }
+
+            override fun onAuthenticationFailed() {
+                super.onAuthenticationFailed()
+                loadFrag(AuthenticationFailedFragment())
+            }
+        })
+
+        val promptInfo = BiometricPrompt.PromptInfo.Builder()
+            .setTitle(getString(R.string.authenticate_title))
+            .setSubtitle(getString(R.string.authenticate_subtitle))
+            .setNegativeButtonText("Cancel")
+            .build()
+        biometricPrompt.authenticate(promptInfo)
+
+    }
 
     private fun loadFrag(fragment: Fragment?): Boolean {
         if (fragment != null) {
